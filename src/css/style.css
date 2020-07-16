@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+button{
+    cursor: pointer;
+}
+.container {
+    display: flex;
+}
+
+/* Main */
+.main-pos{
+    width: 70vw;
+    height: 100vh;
+}
+
+.main-nav {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    overflow: hidden;    
+    height: 40px;
+    width: inherit;
+    padding: 40px;
+    color: #76ead7;
+    background-color: white;
+    font-weight: 100;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.25);
+    z-index: 2;
+}
+
+#search-input{
+    margin-left: auto;
+    height: 40px;
+    width: 40vmax;
+    padding: 10px;
+    background-color: #eeeeee;
+    border: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+#search-button {
+    margin-left: 0;
+    height: 40px;
+    width: 100px;
+    background-color: #76ead7;
+    border: 0;
+    border-radius: 0 5px 5px 0;
+    color: white;
+    
+}
+
+.sidebar{
+    position: fixed;
+    float: left;
+    overflow: auto;
+    margin-top: 80px;
+    height: 100%;
+    width: 250px;
+    padding: 20px 0px 200px 0px;
+    background-color: white;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+.sidebar h3{
+    text-transform: uppercase;
+    margin-left: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.sidebar ul {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+    padding: 15px 30px;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.sidebar ul li:hover{
+    background-color: #76ead7;
+    color: white;
+}
+
+.sidebar img{
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.main{
+    margin-top: 80px;
+    margin-left: 250px;
+    padding: 20px;
+    float: left;
+}
+/* Cart */
+.cart-pos{
+    width: 30vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.cart-pos h1{
+    display: block;
+    text-align: center;
+    background-color: #76ead7;
+    height: 40px;
+    padding: 40px;
+    color: white;
+    font-weight: 500;
+    display: none;
+}

@@ -21,10 +21,10 @@ button{
     position: fixed;
     display: flex;
     align-items: center;
-    overflow: hidden;    
-    height: 40px;
-    width: inherit;
+    /* margin-left: -0.7%; */
+    height: 80px;
     padding: 40px;
+    width: inherit;
     color: #76ead7;
     background-color: white;
     font-weight: 100;
@@ -45,7 +45,7 @@ button{
 #search-button {
     margin-left: 0;
     height: 40px;
-    width: 100px;
+    width: 5vmax;
     background-color: #76ead7;
     border: 0;
     border-radius: 0 5px 5px 0;
@@ -97,27 +97,57 @@ button{
 }
 
 .main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-top: 80px;
     margin-left: 250px;
     padding: 20px;
     float: left;
+    background-color: #eeeeee;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 20px 20px 20px;
+
+    cursor: pointer;
+}
+
+.menu-item img {
+    width: 220px;
+    height: auto;
+}
+
+.menu-item strong {
+    font-weight: bold;
+}
+
+.menu-item span {
+    font-weight: 300;
 }
 /* Cart */
 .cart-pos{
+    position: fixed;
+    margin-left: 70vw;
     width: 30vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-items: center;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.25);
+    z-index: 2;
 }
 
-.cart-pos h1{
-    display: block;
-    text-align: center;
+.cart-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #76ead7;
-    height: 40px;
     padding: 40px;
     color: white;
-    font-weight: 500;
-    display: none;
+    font-weight: bolder;
+    height: 40px;
 }

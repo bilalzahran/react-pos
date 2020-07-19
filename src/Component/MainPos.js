@@ -1,18 +1,14 @@
 import React from 'react';
 import { Navbar } from './main/Navbar';
 import { Sidebar } from './main/Sidebar';
-import { Main } from './main/Main';
+import Main from './main/Main';
 
-class MainPos extends React.Component {
-    render(){
-        return (
-            <div className="main-pos">
-                <Navbar/>
-                <Sidebar/>
-                <Main/>
-            </div>
-        );
-    }
+export default function MainPos(props){
+    return (
+        <div className="main-pos">
+            <Navbar/>
+            <Sidebar/>
+            <Main menus={props.menus} setOrder={props.setOrder} order={props.order}/>
+        </div>
+    )
 }
-
-export default MainPos;

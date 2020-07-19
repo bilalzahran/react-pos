@@ -1,12 +1,16 @@
 import React from 'react';
 import {formatPrice} from '../../helper';
 
-
 export default function MenuItem(props){
     const {name, price, image} = props.details;
-
     function handleClick(){
-        props.setOrder([...props.order,]);
+        const index = props.index;
+        if([index] in props.order){
+            props.setOrder({...props.order, });
+        }else{
+            props.setOrder({...props.order, [index]: {qty: 1, notes: " "}});
+        }
+       
     }  
 
     return (

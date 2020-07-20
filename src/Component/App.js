@@ -11,7 +11,7 @@ function App() {
   return (
       <div className="container">
         <MainPos menus={menu} setOrder={setOrder} order={order}/>
-        <CartPos order={order} menus={menu}/>
+        <CartPos order={order} menus={menu} setOrder={setOrder}/>
       </div>
     );
 }

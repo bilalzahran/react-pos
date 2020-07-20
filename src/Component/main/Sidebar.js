@@ -12,8 +12,8 @@ export const Sidebar = () => (
 
         <h3>Drinks</h3>
         <ul>
-            <li><img src="/images/logo/coffee.svg" alt="menu-logo"/>Cofee</li>
-            <li><img src="/images/logo/tea.svg" alt="menu-logo"/>Tea</li>
+            <li><img src="/images/logo/tea.svg" alt="menu-logo"/>Cofee</li>
+            <li><img src="/images/logo/coffee.svg" alt="menu-logo"/>Tea</li>
             <li><img src="/images/logo/milk.svg" alt="menu-logo"/>Milk Based</li>
         </ul>
     </div>

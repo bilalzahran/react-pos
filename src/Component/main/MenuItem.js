@@ -6,11 +6,12 @@ export default function MenuItem(props){
     function handleClick(){
         const index = props.index;
         if([index] in props.order){
-            props.setOrder({...props.order, });
+            let newOrder = {...props.order};
+            newOrder[index].qty += 1; 
+            props.setOrder(newOrder);
         }else{
             props.setOrder({...props.order, [index]: {qty: 1, notes: " "}});
         }
-       
     }  
 
     return (

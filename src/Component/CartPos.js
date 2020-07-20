@@ -1,12 +1,18 @@
 import React from 'react';
 import CartItem from './cart/CartItem';
-import {formatPrice} from '../helper';
+import OrderDetails from './cart/OrderDetails';
 
 export default function CartPos(props){
+    const order = Object.keys(props.order);
+    const subtotal = order.reduce((prevTotal, key) => {
+        const menu = props.menus[key];
+        const count = props.order[key].qty;
+        return prevTotal + count * menu.price;
+    },0)
     return (
         <div className="cart-pos">
             <div className="cart-title">
-                <h2>Cart (4)</h2>   
+                <h2>Cart ({Object.keys(props.order).length})</h2>   
             </div>
             <hr></hr>
             <div className="cart-info">
@@ -15,33 +21,11 @@ export default function CartPos(props){
             </div>
             <hr></hr>
             <div className="cart-container">
-                {Object.keys(props.order).map(key=><CartItem key={key} details={props.menus[key]} order={props.order[key]}/>)}
+                {Object.keys(props.order).map(key=><CartItem key={key} index={key} 
+                details={props.menus[key]} orderdetail={props.order[key]} order={props.order} setOrder={props.setOrder}/>)}
             </div>
             <hr></hr>
-            <div className="order-details">
-               <div id="subtotal" className="detail">
-                    <span>Subtotal</span>
-                    <span>{formatPrice(127000)}</span>
-               </div>
-               <div id="discount" className="detail">
-                    <span>Discount (0%)</span>
-                    <span>{formatPrice(127000)}</span>
-               </div>
-               <div id="pajak" className="detail">
-                    <span>Pajak (10%)</span>
-                    <span>{formatPrice(127000)}</span>
-               </div>
-               <div id="total" className="detail">
-                   <span><h3>Total</h3></span>
-                   <span><h3>{formatPrice(1200000)}</h3></span>
-               </div>
-               <div id="button">
-                   <button className="square-button">Save</button>
-                   <button className="square-button">Coupon</button>
-                   <button className="square-button">Split Bill</button>
-                   <button className="pay-button">Bayar</button>
-               </div>
-            </div>
+            <OrderDetails subtotal={subtotal}/>
         </div>
     );
 }
